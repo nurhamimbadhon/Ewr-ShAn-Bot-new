@@ -11,7 +11,7 @@ async function baseUrl() {
 
 module.exports.config = {
   name: "gpt4",
-  aliases: ["gp"],
+  aliases: ["gp", "st"],
   version: "1.0.0",
   role: 0,
   author: "dipto",
