@@ -16,7 +16,15 @@ module.exports = {
 
     langs: {
         en: {
-            listAdmin: "🎭 ADMIN LIST 🎭\n\nOWNER: ♣ HASAN ♣\n___________________________\n\nADMIN USERS:\n%1\n___________________________",
+            listAdmin: "🎭 ADMIN LIST 🎭"
+                + "\n ♦___________________♦"
+                + "\n ❃ OWNER:♣ HASAN ♣"
+                + "\n _____________________________"
+                + "\n _____♪ ADMIN ♪_____"
+                + "\n %1"
+                + "\n _____________________________"
+                + "\n ❃ ♦OWNER♦:https://www.facebook.com/Itz.HaSaN.00"
+                + "\n |__H_A_S_A_N_S__B_O_T__|",
             noAdmins: "⚠️ | No admins found in the bot!"
         }
     },
@@ -37,7 +45,7 @@ module.exports = {
 
         // Fetch admin names using their IDs
         const adminNames = await Promise.all(
-            adminIds.map(uid => usersData.getName(uid).then(name => `• ${name} (${uid})`))
+            adminIds.map(uid => usersData.getName(uid).then(name => `❃ ${name} (${uid})`))
         );
 
         // Send the admin list
