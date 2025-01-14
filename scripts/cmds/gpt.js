@@ -32,15 +32,19 @@ module.exports.onReply = async function ({ api, event, Reply }) {
   try {
     const response = await axios.get(`${await baseUrl()}/gpt4?text=${encodeURIComponent(reply)}&senderID=${author}`);
     const message = response.data.data;
-    await api.sendMessage(message, event.threadID, (err, info) => {
-      global.GoatBot.onReply.set(info.messageID, {
-        commandName: this.config.name,
-        type: 'reply',
-        messageID: info.messageID,
-        author: event.senderID,
-        link: message
-      });
-    }, event.messageID);
+    if (message) {
+      await api.sendMessage(message, event.threadID, (err, info) => {
+        global.GoatBot.onReply.set(info.messageID, {
+          commandName: this.config.name,
+          type: 'reply',
+          messageID: info.messageID,
+          author: event.senderID,
+          link: message
+        });
+      }, event.messageID);
+    } else {
+      api.sendMessage("No response received from the server.", event.threadID, event.messageID);
+    }
   } catch (error) {
     console.error(error.message);
     api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
@@ -56,21 +60,26 @@ module.exports.onStart = async function ({ api, args, event }) {
       return api.sendMessage("Please provide a question to answer\n\nExample:\n!gpt4 hey", event.threadID, event.messageID);
     }
 
-    // Ensure the query starts with default language 'bn' or use 'en' or 'banglish' as needed
-    const language = ['bn', 'en', 'banglish'].includes(event.messageLanguage) ? event.messageLanguage : 'bn';
-    query = `${language} ${query}`;
+    // Ensure 'banglish' is included in the language handling
+    if (!['bn', 'banglish', 'en'].includes(event.messageLanguage)) {
+      query = 'bn ' + query;  // Default language is 'bn'
+    }
 
     const response = await axios.get(`${await baseUrl()}/gpt4?text=${encodeURIComponent(query)}&senderID=${author}`);
     const message = response.data.data;
-    await api.sendMessage({ body: message }, event.threadID, (error, info) => {
-      global.GoatBot.onReply.set(info.messageID, {
-        commandName: this.config.name,
-        type: 'reply',
-        messageID: info.messageID,
-        author,
-        link: message
-      });
-    }, event.messageID);
+    if (message) {
+      await api.sendMessage({ body: message }, event.threadID, (error, info) => {
+        global.GoatBot.onReply.set(info.messageID, {
+          commandName: this.config.name,
+          type: 'reply',
+          messageID: info.messageID,
+          author,
+          link: message
+        });
+      }, event.messageID);
+    } else {
+      api.sendMessage("No response received from the server.", event.threadID, event.messageID);
+    }
   } catch (error) {
     console.error(`Failed to get an answer: ${error.message}`);
     api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
