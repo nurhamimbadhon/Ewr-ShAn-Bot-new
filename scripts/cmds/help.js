@@ -12,7 +12,7 @@ const doNotDelete = "🦇𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦�
 
 module.exports = {
  config: {
- name: "xhelp",
+ name: "help",
  version: "1.18",
  author: "NTKhang | BaYjid",
  countDown: 5,
