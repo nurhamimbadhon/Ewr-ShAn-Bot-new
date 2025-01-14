@@ -10,8 +10,8 @@ async function baseUrl() {
 }
 
 module.exports.config = {
-  name: "gpt4",
-  aliases: ["gp"],
+  name: "gpt",
+  aliases: ["st"],
   version: "1.0.0",
   role: 0,
   author: "dipto",
@@ -56,10 +56,9 @@ module.exports.onStart = async function ({ api, args, event }) {
       return api.sendMessage("Please provide a question to answer\n\nExample:\n!gpt4 hey", event.threadID, event.messageID);
     }
 
-    // Default language is 'bn' (Bengali)
-    if (!['bn', 'banglish', 'en'].includes(event.messageLanguage)) {
-      query = 'bn ' + query;  // Ensure the query starts with default language 'bn'
-    }
+    // Ensure the query starts with default language 'bn' or use 'en' or 'banglish' as needed
+    const language = ['bn', 'en', 'banglish'].includes(event.messageLanguage) ? event.messageLanguage : 'bn';
+    query = `${language} ${query}`;
 
     const response = await axios.get(`${await baseUrl()}/gpt4?text=${encodeURIComponent(query)}&senderID=${author}`);
     const message = response.data.data;
