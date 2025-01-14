@@ -26,10 +26,16 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
+			welcomeMessage: "———♣ HASAN ♣———\n🦋Good {session}"
+				+ "\n  🖤✨ Thank you for inviting me to the group! 🤗🥳"
+				+ "\n ⚜️ BOT PREFIX ⚜️: %1"
+				+ "\n __________________________"
+				+ "\n ✨ OWNER ✨:https://www.facebook.com/Itz.HaSaN.00"
+				+ "\n __________________________"
+				+ "\n ⚠️ To view the list of commands please enter: %1help",
 			multiple1: "you",
 			multiple2: "you guys",
-			defaultWelcomeMessage: `Hello {userName}.\nWelcome {multiple} to the chat group: {boxName}\nHave a nice {session} 😊`
+			defaultWelcomeMessage: `✨Assalamualaikum✨\n🦋 Hello {userName}.\n😘🙆 Welcome {multiple} to the chat group: {boxName} \n💫 Wishing {multiple} a lovely {session} 😊`
 		}
 	},
 
