@@ -25,8 +25,7 @@ module.exports = {
 			session4: "evening",
 			leaveType1: "left",
 			leaveType2: "was kicked from",
-			defaultLeaveMessage: "{userName} {type} the group"
-		}
+			defaultLeaveMessage: "🦋Good {session}💫\n ⚠️ ☞ গ্রুপ এ থাকার যোগ্যতা নাই দেখে {userName} {type} the group"
 	},
 
 	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
