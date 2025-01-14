@@ -47,7 +47,7 @@ module.exports.onReply = async function ({ api, event, Reply }) {
         }, event.messageID);
       } catch (err) {
         console.log(err.message);
-        api.sendMessage(`Error: ${err.message}`);
+        api.sendMessage(`ত্রুটি: ${err.message}`, event.threadID, event.messageID);
       }
     }
   }
@@ -56,19 +56,19 @@ module.exports.onReply = async function ({ api, event, Reply }) {
 module.exports.onStart = async function ({ api, args, event }) {
   try {
     const author = event.senderID;
-    const dipto = args.join(" ").toLowerCase();
+    const inputText = args.join(" ").toLowerCase();
 
     if (!args[0]) {
       return api.sendMessage(
-        "Please provide a question to answer\n\nExample:\n!gpt4 hey",
+        "দয়া করে একটি প্রশ্ন লিখুন উত্তর পেতে।\n\nউদাহরণ:\n!gpt4 কেমন আছো",
         event.threadID,
         event.messageID
       );
     }
 
-    if (dipto) {
+    if (inputText) {
       const response = await axios.get(
-        `${await baseUrl()}/gpt4?text=${encodeURIComponent(dipto)}&senderID=${author}`
+        `${await baseUrl()}/gpt4?text=${encodeURIComponent(inputText)}&senderID=${author}`
       );
 
       const data = response.data.data;
@@ -86,8 +86,8 @@ module.exports.onStart = async function ({ api, args, event }) {
       }, event.messageID);
     }
   } catch (error) {
-    console.log(`Failed to get an answer: ${error.message}`);
-    api.sendMessage(`Error: ${error.message}`, event.threadID, event.messageID);
+    console.log(`উত্তর পেতে ব্যর্থ: ${error.message}`);
+    api.sendMessage(`ত্রুটি: ${error.message}`, event.threadID, event.messageID);
   }
 };
 
@@ -149,4 +149,4 @@ function convertToBanglish(text) {
     .split("")
     .map((char) => banglaToBanglishMap[char] || char)
     .join("");
-        }
+}
