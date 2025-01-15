@@ -9,7 +9,7 @@ const baseApiUrl = async () => {
 
 module.exports.config = {
   name: "fbcover",
-  aliases:["fbcv"],
+  aliases:["fcp"]
   version: "6.9",
   role: 0,
   author: "Dipto",
