@@ -27,7 +27,7 @@ module.exports = {
     }
 
     // Handle special cases for specific UIDs
-    if (uid === "100078140834638" || uid === "100084690500330") {
+    if (uid === "100068909067279") {
       return message.reply("You are the trash 🐸🐸.");
     }
 
