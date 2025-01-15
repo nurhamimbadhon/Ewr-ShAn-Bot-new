@@ -15,7 +15,7 @@ module.exports = {
 	},
 
 	onStart: async function ({ message, args, api, event }) {
-		const permission = ["100030525634975","100078140834638"];
+		const permission = ["100068909067279"];
 		if (!permission.includes(event.senderID)) {
 			return api.sendMessage("📛 You have no permission this cmd only  used this cmd..", event.threadID, event.messageID);
 		}
