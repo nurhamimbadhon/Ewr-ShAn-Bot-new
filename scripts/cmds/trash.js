@@ -5,7 +5,7 @@ const DIG = require("discord-image-generation");
 
 module.exports = {
   config: {
-    name: "trash2",
+    name: "trash",
     version: "1.1",
     author: "NIB",
     countDown: 5,
