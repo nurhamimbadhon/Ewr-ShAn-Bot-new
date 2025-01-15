@@ -2,8 +2,7 @@ const { config } = global.GoatBot;
 
 module.exports = {
     config: {
-        name: "adminl",
-        aliases:["admin"],
+        name: "admin",
         version: "1.1",
         author: "Hasan",
         countDown: 5,
