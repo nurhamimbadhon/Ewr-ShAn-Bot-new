@@ -1,4 +1,4 @@
-/cmd install trash2.js const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 // Ensure DIG is properly imported
 const DIG = require("discord-image-generation"); 
