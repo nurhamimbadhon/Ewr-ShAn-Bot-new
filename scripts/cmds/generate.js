@@ -1,7 +1,7 @@
 module.exports = {
 		config: {
 				name: "generate",
-        aliases:["gen"]
+                                aliases:["gen"],
 				version: "1.0.0",
 				role: 0,
 				author: "deku",
