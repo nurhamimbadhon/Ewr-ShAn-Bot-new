@@ -46,4 +46,4 @@ async function bal(one, two) {
 
     await img.writeAsync(pth)
     return pth
-              }
+}
