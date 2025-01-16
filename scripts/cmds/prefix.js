@@ -47,12 +47,12 @@ module.exports = {
 				+ "\n 🙆 FACEBOOK 🙆:https://www.facebook.com/Itz.HaSaN.00"
 		},
 		en: {
-			reset: "Your prefix has been reset to default: %1",
-			onlyAdmin: "Only admin can change prefix of system bot",
-			confirmGlobal: "Please react to this message to confirm change prefix of system bot",
-			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
-			successGlobal: "Changed prefix of system bot to: %1",
-			successThisThread: "Changed prefix in your box chat to: %1",
+			reset: "🙆 Your prefix has been reset to default: %1",
+			onlyAdmin: "⚠️ Only admin can change prefix of system bot",
+			confirmGlobal: "⭕ Please react to this message to confirm change prefix of system bot",
+			confirmThisThread: "⭕ Please react to this message to confirm change prefix in your box chat",
+			successGlobal: "♻️ Changed prefix of system bot to: %1",
+			successThisThread: "♻️ Changed prefix in your box chat to: %1",
 			myPrefix: "🦋ASSALAMUALAIKUM✨"
 				+ "\n                       "
 				+ "\n                       "
