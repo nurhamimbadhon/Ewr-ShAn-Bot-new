@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = {
 		config: {
 				name: "question",
-        aliases:["cq"]
+                                aliases:["cq"],
 				version: "1.0.0",
 				role: 0,
 				author: "Jonell Magallanes",
