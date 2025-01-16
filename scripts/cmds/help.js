@@ -61,12 +61,8 @@ module.exports = {
       msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
       msg += `🎀HASAN🎀`;
 
-      const helpListImages = [""];
-      const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
-
       await message.reply({
         body: msg,
-        attachment: await global.utils.getStreamFromURL(helpListImage),
       });
     } else {
       const commandName = args[0].toLowerCase();
