@@ -143,9 +143,9 @@ module.exports.onReply = async ({ api, event, Reply }) => {
 module.exports.onChat = async ({ api, event,message }) => {
   try{
     const body = event.body ? event.body.toLowerCase() : ""
-    if(body.startsWith("bby") || body.startsWith("bot") || body.startsWith("hii") || body.startsWith("Hasan") || body.startsWith("baby")){
+    if(body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("hii")){
       const arr = body.replace(/^\S+\s*/, "")
-      if(!arr){ api.sendMessage("kire bolod dakos killai😾\n Dekhos na gf er loghe chipay achi 😒🤐", event.threadID, (error, info) => {
+      if(!arr){ api.sendMessage("hea bby bolo\nEto daka dakir ki ache 😒", event.threadID, (error, info) => {
       global.GoatBot.onReply.set(info.messageID, {
         commandName: this.config.name,
         type: "reply",
