@@ -26,4 +26,4 @@ module.exports.onStart = async function({ api, event, args }) {
 		await global.utils.downloadFile(`https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(msg)}&tl=bn&client=tw-ob`, path);
 		return api.sendMessage({ attachment: createReadStream(path)}, event.threadID, () => unlinkSync(path));
 	} catch (e) { return console.log(e) };
-}
+				       }
