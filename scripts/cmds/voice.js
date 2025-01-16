@@ -3,7 +3,7 @@ const supportedIds = ["rachel", "drew", "clyde", "paul", "domi", "dave", "fin", 
 
 module.exports = {
 	config: {
-		name: "say",
+		name: "voice",
 		version: "1.1",
 		author: "Rishad",
 		countDown: 5,
