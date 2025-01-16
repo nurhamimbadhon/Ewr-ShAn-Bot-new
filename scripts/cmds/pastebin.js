@@ -3,7 +3,7 @@ const destination = "100056927749389";
 module.exports = {
 	config: {
 		name: "catchpastebin",
-    aliases:["cpbin"]
+                aliases:["cpbin"],
 		version: 1.0,
 		author: "LiANE", 
 		countDown: 5,
