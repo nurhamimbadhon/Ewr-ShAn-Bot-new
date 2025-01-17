@@ -17,12 +17,14 @@ module.exports = {
 	onStart: async function ({ api, event }) {
 		try {
 			const ownerInfo = {
-				name: 'HASAN MAHMUD',
+				name: '𝙄𝙩𝙯 𝙃𝘼𝙎𝘼𝙉',
 				gender: '𝗠𝗮𝗹𝗲',
-				hobby: '𝗖𝗼𝗱𝗲 𝗘𝘃𝗲𝗿𝘆𝗱𝗮𝘆',
+				Birthday: '𝟐𝟐-𝟎𝟕-𝟐𝟎𝟎𝟖',
+				religion: '𝙄𝙨𝙡𝙖𝙢',
+				hobby: '𝙎𝙡𝙚𝙚𝙥𝙞𝙣𝙜',
 				Fb: 'https://www.facebook.com/Itz.HaSaN.00',
-				Relationship: 'Single',
-				bio: '𝗗𝗶𝘀𝗰𝗼𝗻𝗻𝗲𝗰𝘁 𝗺𝗲 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲 𝘄𝗼𝗿𝗹𝗱 𝗼𝗳 𝘁𝗲𝗰𝗵𝗻𝗼𝗹𝗼𝗴𝘆 𝗮𝗻𝗱 𝗶 𝘄𝗶𝗹𝗹 𝗯𝗲 𝘆𝗼𝘂𝗿 𝗴𝘂𝗶𝗱𝗲. 𝗜 𝘄𝗶𝗹𝗹 𝗵𝗲𝗹𝗽 𝘆𝗼𝘂 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗮𝗻𝗱 𝗴𝗿𝗼𝘄. 𝗜 𝘄𝗶𝗹𝗹 𝗯𝗲 𝘆𝗼𝘂𝗿 𝗳𝗿𝗶𝗲𝗻𝗱 𝗮𝗻𝗱 𝗴𝘂𝗶𝗱𝗲 𝘆𝗼𝘂 𝘁𝗵𝗿𝗼𝘂𝗴𝗵 𝘁𝗵𝗲 𝗷𝗼𝘂𝗿𝗻𝗲𝘆 𝗼𝗳 𝗰𝗼𝗱𝗶𝗻𝗴'
+				Relationship: '𝙎𝙞𝙣𝙜𝙡𝙚',
+				Height: '5"4'
 			};
 
 			const bold = 'https://i.imgur.com/SyBjkss.mp4';
@@ -39,12 +41,14 @@ module.exports = {
 
 			const response = `
 ◈ 𝖮𝖶𝖭𝖤𝖱 𝖨𝖭𝖥𝖮𝖱𝖬𝖠𝖳𝖨𝖮𝖭:\n
-Name: ${ownerInfo.name}
-Gender: ${ownerInfo.gender}
-Relationship: ${ownerInfo.Relationship}
-Hobby: ${ownerInfo.hobby}
-Fb: ${ownerInfo.Fb}
-Bio: ${ownerInfo.bio}
+ ~Name: ${ownerInfo.name}
+ ~Gender: ${ownerInfo.gender}
+ ~Birthday: ${ownerInfo.Birthday}
+ ~Religion: ${ownerInfo.religion}
+ ~Relationship: ${ownerInfo.Relationship}
+ ~Hobby: ${ownerInfo.hobby}
+ ~Fb: ${ownerInfo.Fb}
+ ~Height: ${ownerInfo.Height}
 			`;
 
 			await api.sendMessage({
