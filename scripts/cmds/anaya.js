@@ -13,22 +13,14 @@ module.exports = {
 		},
 		category: 'funny',
 		guide: {
-			vi: '   {pn} [on | off]: bật/tắt simsimi'
-				+ '\n'
-				+ '\n   {pn} <word>: chat nhanh với simsimi'
-				+ '\n   Ví dụ:\n    {pn} hi',
 			en: '   {pn} <word>: chat with hina'
 				+ '\n   Example:\n    {pn} hi'
+			        + '\n  {pn} [on | off]:turn on/off simsimi'
 		}
 	},
 
 	langs: {
-		vi: {
-			turnedOn: 'Bật simsimi thành công!',
-			turnedOff: 'Tắt simsimi thành công!',
-			chatting: 'Đang chat với simsimi...',
-			error: 'Simsimi đang bận, bạn hãy thử lại sau'
-		},
+		
 		en: {
 			turnedOn: '✅ | Turned on Anya successfully!',
 			turnedOff: '✅ | Turned off Anya successfully!',
