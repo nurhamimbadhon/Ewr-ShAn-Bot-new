@@ -1,7 +1,7 @@
-/cmd install uptime.js module.exports = {
-  config: {
+module.exports = {
+    config: {
     name: "uptime",
-    aliases:["up", "upt"]
+    aliases:["up", "upt"],
     version: "1.1",
     author: "Anas x 114",
     role: 2,
