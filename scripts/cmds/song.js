@@ -1,62 +1,122 @@
+const fs = require("fs-extra");
+const ytdl = require("@neoxr/ytdl-core");
+const yts = require("yt-search");
 const axios = require('axios');
-const fs = require('fs');
-const { GoatWrapper } = require('fca-liane-utils');
+const tinyurl = require('tinyurl');
 
 module.exports = {
-		config: {
-				name: "song",
-				version: "1.0.0",
-				role: 0,
-				hasPermission: 0,
-				credits: "cliff",
-				countDown: 9,
-				author: "cliff",
-				shortDescription: "Search and play music from Spotify",
-				commandCategory: "spotify",
-				category: "audio",
-				hasPrefix: false,
-				usage: "[song name]",
-				cooldowns: 5,
-				usePrefix: false,
-				usages: "[song name]",
-				cooldown: 5
-		},
+  config: {
+    name: "song",
+    version: "1.3",
+    author: "JARiF",
+    countDown: 5,
+    role: 0,
+    category: "cute",
+  },
 
-		onStart: async function ({ api, event, args }) {
-				const listensearch = encodeURIComponent(args.join(" "));
-				const apiUrl = `http://158.101.198.227:8609/spotifydl?title=${listensearch}`;
+  onStart: async function ({ api, event, message }) {
+    try {
+        if (event.type === "message_reply" && ["audio", "video"].includes(event.messageReply.attachments[0].type)) {
+            const attachmentUrl = event.messageReply.attachments[0].url;
+        const urls = await tinyurl.shorten(attachmentUrl) || args.join(' ');
+        const response = await axios.get(`https://www.api.vyturex.com/songr?url=${urls}`);
 
-				if (!listensearch) return api.sendMessage("Please provide the name of the song you want to search.", event.threadID, event.messageID);
+        if (response.data && response.data.title) {
+          const song = response.data.title;
+          const originalMessage = await message.reply(`Searching for "${song}"...`);
+          const searchResults = await yts(song);
 
-				try {
-						api.sendMessage("🎵 | Searching music on Spotify. Please wait...", event.threadID, event.messageID);
+          if (!searchResults.videos.length) {
+            return message.reply("Error: Song not found.");
+          }
 
-						const response = await axios.get(apiUrl);
-						const { downloadUrl } = response.data;
+          const video = searchResults.videos[0];
+          const videoUrl = video.url;
+          const stream = ytdl(videoUrl, { filter: "audioonly" });
+          const fileName = `music.mp3`;
+          const filePath = `${__dirname}/tmp/${fileName}`;
 
-						if (downloadUrl.status === 200) {
-								const filePath = `${__dirname}/cache/${Date.now()}.mp3`;
-								const writeStream = fs.createWriteStream(filePath);
+          stream.pipe(fs.createWriteStream(filePath));
 
-								const audioResponse = await axios.get(downloadUrl.result, { responseType: 'stream' });
+          stream.on('response', () => {
+            console.info('[DOWNLOADER]', 'Starting download now!');
+          });
 
-								audioResponse.data.pipe(writeStream);
+          stream.on('info', (info) => {
+            console.info('[DOWNLOADER]', `Downloading ${info.videoDetails.title} by ${info.videoDetails.author.name}`);
+          });
 
-								writeStream.on('finish', () => {
-										api.sendMessage({
-												body: `🎧 Here's your music from Spotify. Enjoy listening!\n\nDownload: ${downloadUrl.result}\n\n💿 Now Playing...`,
-												attachment: fs.createReadStream(filePath),
-										}, event.threadID, () => fs.unlinkSync(filePath), event.messageID);
-								});
-						} else {
-								api.sendMessage("❓ | Sorry, couldn't find the requested music on Spotify.", event.threadID);
-						}
-				} catch (error) {
-						console.error(error);
-						api.sendMessage("🚧 | An error occurred while processing your request.", event.threadID);
-				}
-		}
+          stream.on('end', async () => {
+            console.info('[DOWNLOADER] Downloaded');
+            if (fs.statSync(filePath).size > 87380608) {
+              fs.unlinkSync(filePath);
+              return message.reply('[ERR] The file could not be sent because it is larger than 83mb.');
+            }
+            const replyMessage = {
+              body: `Title: ${video.title}\nArtist: ${video.author.name}`,
+              attachment: fs.createReadStream(filePath),
+            };
+            await api.unsendMessage(originalMessage.messageID);
+            await message.reply(replyMessage, event.threadID, () => {
+              fs.unlinkSync(filePath);
+            });
+          });
+        } else {
+          return message.reply("Error: Song information not found.");
+        }
+      } else {
+        const input = event.body;
+        const text = input.substring(12);
+        const data = input.split(" ");
+
+        if (data.length < 2) {
+          return message.reply("Please put a song");
+        }
+
+        data.shift();
+        const song = data.join(" ");
+        const originalMessage = await message.reply(`Searching your song named "${song}"...`);
+        const searchResults = await yts(song);
+
+        if (!searchResults.videos.length) {
+          return message.reply("Error: Invalid request.");
+        }
+
+        const video = searchResults.videos[0];
+        const videoUrl = video.url;
+        const stream = ytdl(videoUrl, { filter: "audioonly" });
+        const fileName = `music.mp3`;
+        const filePath = `${__dirname}/tmp/${fileName}`;
+
+        stream.pipe(fs.createWriteStream(filePath));
+
+        stream.on('response', () => {
+          console.info('[DOWNLOADER]', 'Starting download now!');
+        });
+
+        stream.on('info', (info) => {
+          console.info('[DOWNLOADER]', `Downloading ${info.videoDetails.title} by ${info.videoDetails.author.name}`);
+        });
+
+        stream.on('end', async () => {
+          console.info('[DOWNLOADER] Downloaded');
+          if (fs.statSync(filePath).size > 26214400) {
+            fs.unlinkSync(filePath);
+            return message.reply('[ERR] The file could not be sent because it is larger than 25MB.');
+          }
+          const replyMessage = {
+            body: `Title: ${video.title}\nArtist: ${video.author.name}`,
+            attachment: fs.createReadStream(filePath),
+          };
+          await api.unsendMessage(originalMessage.messageID);
+          await message.reply(replyMessage, event.threadID, () => {
+            fs.unlinkSync(filePath);
+          });
+        });
+      }
+    } catch (error) {
+      console.error('[ERROR]', error);
+      message.reply("This song is not available.");
+    }
+  },
 };
-
-const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true });
