@@ -5,7 +5,7 @@ module.exports = {
 		version: "1.0",
 		author: "AceGun",
 		countDown: 5,
-		role: 0,
+		role: 2,
 		shortDescription: "send you a girl photos",
 		longDescription: "",
 		category: "media",
