@@ -1,24 +1,23 @@
 module.exports = {
-    config: {
+  config: {
     name: "uptime",
     aliases:["up", "upt"],
-    version: "1.1",
+    version: "1.7",
     author: "Anas x 114",
     role: 2,
     shortDescription: {
-      en: "Displays detailed bot stats and uptime."
+      en: "Get stylish bot stats and uptime!"
     },
     longDescription: {
-      en: "Displays the total number of users who have interacted with the bot, the total threads, and the bot's uptime in a formatted way."
+      en: "Displays bot uptime, user, thread stats, and total messages processed in a modern and visually engaging style."
     },
     category: "system",
     guide: {
-      en: "Use {p}uptime to display detailed stats and uptime of the bot."
+      en: "Use {p}uptime to display the bot's stats in style."
     }
   },
-  onStart: async function ({ api, event, args, usersData, threadsData }) {
+  onStart: async function ({ api, event, usersData, threadsData, messageCount }) {
     try {
-      const botName = "🎭𝘛ₒₓᵢ𝚌ᵢ𝚝ₑᵣ⭕"; // Name your bot here
       const allUsers = await usersData.getAll();
       const allThreads = await threadsData.getAll();
       const uptime = process.uptime();
@@ -29,23 +28,29 @@ module.exports = {
       const minutes = Math.floor((uptime % 3600) / 60);
       const seconds = Math.floor(uptime % 60);
 
-      const uptimeString = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+      const uptimeString = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 
       // Active threads (threads with activity)
       const activeThreads = allThreads.filter(thread => thread.messageCount > 0).length;
 
-      // Crafting the message
-      const message = `
-🤖 | ~Bot Name: ${botName}
-⏳ | ~Uptime: ${uptimeString}
-👥 | ~Total Users: ${allUsers.length}
-📢 | ~Total Threads: ${allThreads.length}
-🔔 | ~Active Threads: ${activeThreads}
+      // Total messages processed
+      const totalMessages = messageCount || 0; // Replace with actual message count logic if needed
 
-Thank you for using ${botName}! 🎉
+      // Stylish message design
+      const message = `
+┏━━━━━━━━━━━━━━━┓
+  🎭 𝘛ₒₓᵢ𝚌ᵢ𝚝ₑᵣ ⭕
+┗━━━━━━━━━━━━━━━┛
+📆 Uptime: ${uptimeString}
+🙋 Total Users: ${allUsers.length}
+💬 Total Threads: ${allThreads.length}
+🔥 Active Threads: ${activeThreads}
+📨 Total Messages: ${totalMessages}
+━━━━━━━━━━━━━━━━━━━
+💡 Keep the vibes going!
       `;
 
-      api.sendMessage(message, event.threadID);
+      api.sendMessage(message.trim(), event.threadID);
     } catch (error) {
       console.error(error);
       api.sendMessage("An error occurred while retrieving bot stats.", event.threadID);
