@@ -1,5 +1,5 @@
 {
-	"name": "goat-bot-v2",
+	"name": "H_A_S_A_N_S__B_O_T",
 	"version": "1.5.35",
 	"description": "A simple Bot chat messenger using personal account. Made by NTKhang.",
 	"main": "index.js",
@@ -55,11 +55,11 @@
 		"dev": "set NODE_ENV=development&& node index.js",
 		"prod": "set NODE_ENV=production&& node index.js"
 	},
-	"author": "NTKhang",
+	"author": "HASAN",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ntkhang03/Goat-Bot-V2.git"
+		"url": "git+https://github.com/hasan32425/Hasan-s-BoT.git"
 	},
 	"keywords": [],
 	"bugs": {
