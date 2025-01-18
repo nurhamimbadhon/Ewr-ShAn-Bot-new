@@ -36,32 +36,34 @@ module.exports = {
 			confirmThisThread: "Vui lòng thả cảm xúc bất kỳ vào tin nhắn này để xác nhận thay đổi prefix trong nhóm chat của bạn",
 			successGlobal: "Đã thay đổi prefix hệ thống bot thành: %1",
 			successThisThread: "Đã thay đổi prefix trong nhóm chat của bạn thành: %1",
-			myPrefix: "🦋ASSALAMUALAIKUM✨"
+			myPrefix: "🦋𝘼𝙎𝙎𝘼𝙇𝘼𝙈𝙐𝘼𝙇𝘼𝙄𝙆𝙐𝙈✨"
 				+ "\n                       "
-				+ "\n                       "
-				+ "\n _____⚜️ PREFIX ⚜️_____"
-				+ "\n ------------------------------"
-				+ "\n  🌀 System prefix: %1"
-				+ "\n  💀 Your group chat prefix: %2"
-				+ "\n -----♥ HASAN ♥-----"
-				+ "\n 🙆 FACEBOOK 🙆:https://www.facebook.com/Itz.HaSaN.00"
+				+ "\n 𝙃𝙚𝙡𝙡𝙤 𝙢𝙮 𝙣𝙖𝙢𝙚 𝙞𝙨 🎭𝘛ₒₓᵢ𝚌ᵢ𝚝ₑᵣ⭕"
+				+ "\n 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙢𝙮 ❇️ 𝙋𝙍𝙀𝙁𝙄𝙓 ❇️"
+				+ "\n                         "
+				+ "\n ~🌀 𝙎𝙔𝙎𝙏𝙀𝙈 𝙋𝙍𝙀𝙁𝙄𝙓: %1"
+				+ "\n ~♻️ 𝙋𝙍𝙀𝙁𝙄𝙓 𝙁𝙊𝙍 𝙏𝙃𝙀 𝙂𝙍𝙊𝙐𝙋: %2"
+				+ "\n                         "
+				+ "\n 💠 𝙃𝙀𝙍𝙀 𝙄𝙎 𝙈𝙔 𝙊𝙒𝙉𝙀𝙍 💠"
+				+ "\n ~𝙁𝘽✨:https://www.facebook.com/Itz.HaSaN.00"
 		},
 		en: {
-			reset: "🙆 Your prefix has been reset to default: %1",
-			onlyAdmin: "⚠️ Only admin can change prefix of system bot",
-			confirmGlobal: "⭕ Please react to this message to confirm change prefix of system bot",
-			confirmThisThread: "⭕ Please react to this message to confirm change prefix in your box chat",
-			successGlobal: "♻️ Changed prefix of system bot to: %1",
-			successThisThread: "♻️ Changed prefix in your box chat to: %1",
-			myPrefix: "🦋ASSALAMUALAIKUM✨"
+			reset: "🙆| Your prefix has been reset to default: %1",
+			onlyAdmin: "⭕| Only admin can change prefix of system bot",
+			confirmGlobal: "⚠️| Please react to this message to confirm change prefix of system bot",
+			confirmThisThread: "⚠️| Please react to this message to confirm change prefix in your box chat",
+			successGlobal: "♻️| Changed prefix of system bot to: %1",
+			successThisThread: "♻️| Changed prefix in your box chat to: %1",
+			myPrefix: "🦋𝘼𝙎𝙎𝘼𝙇𝘼𝙈𝙐𝘼𝙇𝘼𝙄𝙆𝙐𝙈✨"
 				+ "\n                       "
-				+ "\n                       "
-				+ "\n _____⚜️ PREFIX ⚜️_____"
-				+ "\n ------------------------------"
-				+ "\n  🌀 System prefix: %1"
-				+ "\n  💀 Your group chat prefix: %2"
-				+ "\n -----♥ HASAN ♥-----"
-				+ "\n 🙆 FACEBOOK 🙆:https://www.facebook.com/Itz.HaSaN.00"
+				+ "\n 𝙃𝙚𝙡𝙡𝙤 𝙢𝙮 𝙣𝙖𝙢𝙚 𝙞𝙨 🎭𝘛ₒₓᵢ𝚌ᵢ𝚝ₑᵣ⭕"
+				+ "\n 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙢𝙮 ❇️ 𝙋𝙍𝙀𝙁𝙄𝙓 ❇️"
+				+ "\n                         "
+				+ "\n ~🌀 𝙎𝙔𝙎𝙏𝙀𝙈 𝙋𝙍𝙀𝙁𝙄𝙓: %1"
+				+ "\n ~♻️ 𝙋𝙍𝙀𝙁𝙄𝙓 𝙁𝙊𝙍 𝙏𝙃𝙀 𝙂𝙍𝙊𝙐𝙋: %2"
+				+ "\n                         "
+				+ "\n 💠 𝙃𝙀𝙍𝙀 𝙄𝙎 𝙈𝙔 𝙊𝙒𝙉𝙀𝙍 💠"
+				+ "\n ~𝙁𝘽✨:https://www.facebook.com/Itz.HaSaN.00"
 		}
 	},
 
