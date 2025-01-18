@@ -23,9 +23,9 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			leaveType1: "left",
-			leaveType2: "was kicked from",
-			defaultLeaveMessage: "🦋Good {session}💫\n ⚠️ ☞ গ্রুপ এ থাকার যোগ্যতা নাই দেখে {userName} {type} the group"
+			leaveType1: "left নিছে",
+			leaveType2: "কে Kick দিছে",
+			defaultLeaveMessage: " ⚜🤦‍♂️ 𝙂𝙊𝙊𝘿 {session} 💔\n  \n সাধুবাদ {userName} আপনাকে \n ⚠| গ্রুপে থাকার যোগ্যতা নাই দেখে {userName} {type} "
 		}
 	},
 
