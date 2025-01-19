@@ -12,7 +12,13 @@ module.exports = {
 		guide: "{pn}"
 	},
 
-	onStart: async function ({ message }) {
+	onStart: async function ({ message }) 
+	const permission = ["100068909067279"];
+  if (!permission.includes(event.senderID)) {
+    api.sendMessage("Who are you bby?🫥🐸.valo hoye ja ekhono smy ache.", event.threadID, event.messageID);
+    return;
+  }
+{
 	 var link = [ 
 "https://i.ibb.co/jfqMF07/image.jpg",
 "https://i.ibb.co/tBBCS4y/image.jpg",
