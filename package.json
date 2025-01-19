@@ -55,11 +55,11 @@
 		"dev": "set NODE_ENV=development&& node index.js",
 		"prod": "set NODE_ENV=production&& node index.js"
 	},
-	"author": "HASAN",
+	"author": "NTKhang",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/hasan32425/Hasan-s-BoT.git"
+		"url": "git+https://github.com/ntkhang03/Goat-Bot-V2.git"
 	},
 	"keywords": [],
 	"bugs": {
