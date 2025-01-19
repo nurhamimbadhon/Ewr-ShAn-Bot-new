@@ -8,43 +8,59 @@ const baseApiUrl = async () => {
     return base.data.api;
 };
 
+const youtubeSearchApi = async (query) => {
+    const apiKey = "AIzaSyCvUXgFaEtaOevitaW0dpp9PAMieSbSNGY
+"; // YouTube Data API Key
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(
+        query
+    )}&key=${apiKey}&maxResults=1`;
+    const response = await axios.get(searchUrl);
+    return response.data.items[0]?.id?.videoId || null;
+};
+
 module.exports = {
     config: {
         name: "song",
         aliases: ["sing", "music"],
-        version: "1.0.0",
+        version: "1.1.0",
         author: "dipto",
         description: {
-            en: "Download audio from YouTube",
+            en: "Download audio from YouTube by link or song name",
         },
         category: "media",
         guide: {
-            en: "  {pn} [<video link>]: use to download audio from YouTube."
-                + "\n   Example:"
-                + "\n {pn} https://www.youtube.com/watch?v=example",
+            en: "  {pn} [<video link>|<song name>]: use to download audio from YouTube."
+                + "\n   Examples:"
+                + "\n {pn} https://www.youtube.com/watch?v=example"
+                + "\n {pn} Shape of You",
         },
     },
     onStart: async ({ api, args, event }) => {
-        const checkurl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})(?:\S+)?$/;
-        const urlYtb = checkurl.test(args[0]);
-
-        if (!urlYtb) {
+        if (args.length === 0) {
             return api.sendMessage(
-                "❌ Please provide a valid YouTube link.",
+                "❌ Please provide a YouTube link or song name.",
                 event.threadID,
                 event.messageID
             );
         }
 
-        const match = args[0].match(checkurl);
-        const videoID = match ? match[1] : null;
+        const input = args.join(" ");
+        const checkurl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})(?:\S+)?$/;
+        const urlYtb = checkurl.test(input);
+        let videoID = null;
 
-        if (!videoID) {
-            return api.sendMessage(
-                "❌ Failed to extract video ID from the provided link.",
-                event.threadID,
-                event.messageID
-            );
+        if (urlYtb) {
+            const match = input.match(checkurl);
+            videoID = match ? match[1] : null;
+        } else {
+            videoID = await youtubeSearchApi(input); // Search by song name
+            if (!videoID) {
+                return api.sendMessage(
+                    "❌ No video found for the given song name.",
+                    event.threadID,
+                    event.messageID
+                );
+            }
         }
 
         try {
@@ -82,4 +98,4 @@ async function downloadFile(url, pathName) {
     } catch (err) {
         throw err;
     }
-}
+    }
