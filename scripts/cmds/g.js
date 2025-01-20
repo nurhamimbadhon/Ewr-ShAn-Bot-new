@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "girl",
+		name: "g",
 		aliases: ["girl"],
 		version: "1.0",
 		author: "AceGun",
@@ -8,7 +8,7 @@ module.exports = {
 		role: 2,
 		shortDescription: "send you a girl photos",
 		longDescription: "",
-		category: "media",
+		category: "18+",
 		guide: "{pn}"
 	},
 
