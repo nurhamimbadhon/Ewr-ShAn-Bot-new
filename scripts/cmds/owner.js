@@ -27,7 +27,7 @@ module.exports = {
 				Height: '5"4'
 			};
 
-			const bold = 'https://imgur.com/5LVLbrC.mp4';
+			const bold = 'https://imgur.com/PA1SJH9.mp4';
 			const tmpFolderPath = path.join(__dirname, 'tmp');
 
 			if (!fs.existsSync(tmpFolderPath)) {
