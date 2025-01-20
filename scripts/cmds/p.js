@@ -32,6 +32,7 @@ message.send({
   if (!permission.includes(event.senderID)) {
     api.sendMessage("~who are you bby🫥🙄.valo hoye jaw ekhono smy ache 🐸", event.threadID, event.messageID);
     return;
-       })
-    }
+       }
+    })
+  }
 }
