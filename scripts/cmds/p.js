@@ -12,7 +12,7 @@ module.exports = {
 		guide: "{pn}"
 	},
 
-	onStart: async function ({ message, event, args, global }) {
+	onStart: async function ({ message, event, args, usersData }) {
 		// অনুমোদিত ব্যবহারকারীদের ID তালিকা
 		const allowedUsers = ["100068909067279"]; // এখানে অনুমোদিত ব্যবহারকারীর আইডি দিন
 
