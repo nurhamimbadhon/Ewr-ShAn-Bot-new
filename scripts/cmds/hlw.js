@@ -31,22 +31,29 @@ const cError = (api, threadID, messageID) =>
   sendMessage(api, threadID, "error🦆💨", messageID);
 
 const teachBot = async (api, threadID, messageID, senderID, teachText) => {
-  const [ask, answer] = teachText.split(" - ").map((text) => text.trim());
-  if (!ask || !answer) {
+  const [ask, answers] = teachText.split(" - ").map((text) => text.trim());
+  if (!ask || !answers) {
     return sendMessage(
       api,
       threadID,
-      "Invalid format. Use: {pn} teach <ask> - <answer>",
+      "Invalid format. Use: {pn} teach <ask> - <answer1, answer2, ...>",
       messageID
     );
   }
+
+  const answerArray = answers
+    .replace(/["]+/g, '')
+    .split(",")
+    .map((ans) => ans.trim())
+    .filter((ans) => ans !== "");
+
   try {
     const res = await axios.get(
-      `${await getAPIBase()}/bby/teach?ask=${encodeURIComponent(ask)}&ans=${encodeURIComponent(answer)}&uid=${senderID}`
+      `${await getAPIBase()}/bby/teach?ask=${encodeURIComponent(ask)}&ans=${encodeURIComponent(answerArray.join(","))}&uid=${senderID}`
     );
     const responseMsg =
       res.data?.message === "Teaching recorded successfully!"
-        ? `Successfully taught the bot!\n📖 Teaching Details:\n- Question: ${res.data.ask}\n- Answer: ${res.data.ans}\n- Your Total Teachings: ${res.data.userStats.user.totalTeachings}`
+        ? `Successfully taught the bot!\n📖 Teaching Details:\n- Question: ${res.data.ask}\n- Answers: ${answerArray.join(", ")}\n- Your Total Teachings: ${res.data.userStats.user.totalTeachings}`
         : res.data?.message || "Teaching failed.";
     return sendMessage(api, threadID, responseMsg, messageID);
   } catch {
@@ -78,7 +85,7 @@ const talkWithBot = async (api, threadID, messageID, senderID, input) => {
 
 module.exports.config = {
   name: "bbu",
-  aliases: ["hasu", "bbz"],
+  aliases: ["bbz", "hey"],
   version: "1.6.9",
   author: "Nazrul",
   role: 0,
@@ -106,10 +113,50 @@ module.exports.onStart = async ({ api, event, args }) => {
 };
 
 module.exports.onChat = async ({ api, event }) => {
-  const { threadID, messageID, senderID, body } = event;
-  const normalized = body.toLowerCase();
-  if (["hasu", "bbu", "bbz", "বট", "hey"].some((cmd) => normalized.startsWith(cmd))) {
-    return talkWithBot(api, threadID, messageID, senderID, body);
+  const { threadID, messageID, body, senderID } = event;
+
+  const cMessages = ["Hello bby!", "Hi there!", "Hey! How can I help?"];
+  const userInput = body.toLowerCase().trim();
+
+  const keywords = ["bbu", "hey", "bbz", "বট", "robot"];
+
+  if (keywords.some((keyword) => userInput.startsWith(keyword))) {
+    const isQuestion = userInput.split(" ").length > 1;
+    if (isQuestion) {
+      const question = userInput.slice(userInput.indexOf(" ") + 1).trim();
+
+      try {
+        const res = await axios.get(
+          `${await getAPIBase()}/bby?text=${encodeURIComponent(question)}&uid=${senderID}`
+        );
+        const replyMsg = makeBold(res.data?.text || "I couldn't understand that. Please teach me!");
+        const react = res.data.react || "";
+
+        return api.sendMessage(replyMsg + react, threadID, (error, info) => {
+          if (!error) {
+            global.GoatBot.onReply.set(info.messageID, {
+              commandName: module.exports.config.name,
+              type: "reply",
+              author: senderID,
+              replyMsg
+            });
+          }
+        }, messageID);
+      } catch (error) {
+        return api.sendMessage("error🦆💨", threadID, messageID);
+      }
+    } else {
+      const rMsg = cMessages[Math.floor(Math.random() * cMessages.length)];
+      return api.sendMessage(rMsg, threadID,(error, info) => {
+          if (!error) {
+            global.GoatBot.onReply.set(info.messageID, {
+              commandName: module.exports.config.name,
+              type: "reply",
+              author: senderID,
+            });
+          }
+        }, messageID);
+    }
   }
 };
 
