@@ -3,67 +3,72 @@ const fs = require("fs-extra");
 const path = require("path");
 
 module.exports = {
-	config: {
-		name: "pinterest",
-		version: "1.0.2",
-		author: "JVB",
-		role: 0,
-		countDown: 50,
-		shortDescription: {
-			en: "Search for images on Pinterest"
-		},
-		longDescription: {
-			en: ""
-		},
-		category: "image",
-		guide: {
-			en: "{prefix}pinterest <search query> -<number of images>"
-		}
-	},
+  config: {
+    name: "pin",
+    aliases: ["pinterest"],
+    version: "1.0.0",
+    author: "kshitiz",
+    role: 0,
+    countDown: 10,
+    shortDescription: {
+      en: "Search images on Pinterest"
+    },
+    category: "image",
+    guide: {
+      en: "{prefix}pin <search query> -<number of images>"
+    }
+  },
 
-	onStart: async function ({ api, event, args, usersData }) {
-		try {
-			const userID = event.senderID;
+  onStart: async function ({ api, event, args, usersData }) {
+    try {
+      const searchQuery = args.join(" ");
 
-			const keySearch = args.join(" ");
-			if (!keySearch.includes("-")) {
-				return api.sendMessage(`Please enter the search query and number of images to return in the format: ${this.config.guide.en}`, event.threadID, event.messageID);
-			}
-			const keySearchs = keySearch.substr(0, keySearch.indexOf('-')).trim();
-			const numberSearch = parseInt(keySearch.split("-").pop().trim()) || 6;
+   
+      if (!searchQuery.includes("-")) {
+        return api.sendMessage(`Invalid format. Example: {prefix}pin cats -5`, event.threadID, event.messageID);
+      }
 
-			const res = await axios.get(`https://celestial-dainsleif-v2.onrender.com/pinterest?pinte=${encodeURIComponent(keySearchs)}`);
-			const data = res.data;
+     
+      const [query, numImages] = searchQuery.split("-").map(str => str.trim());
+      const numberOfImages = parseInt(numImages);
 
-			if (!data || !Array.isArray(data) || data.length === 0) {
-				return api.sendMessage(`No image data found for "${keySearchs}". Please try another search query.`, event.threadID, event.messageID);
-			}
+     
+      if (isNaN(numberOfImages) || numberOfImages <= 0 || numberOfImages > 25) {
+        return api.sendMessage("Please specify a number between 1 and 25.", event.threadID, event.messageID);
+      }
 
-			const imgData = [];
+   
+      const apiUrl = `https://pin-kshitiz.vercel.app/pin?search=${encodeURIComponent(query)}`;
+      const response = await axios.get(apiUrl);
+      const imageData = response.data.result;
 
-			for (let i = 0; i < Math.min(numberSearch, data.length); i++) {
-				const imageUrl = data[i].image;
+     
+      if (!imageData || !Array.isArray(imageData) || imageData.length === 0) {
+        return api.sendMessage(`No images found for "${query}".`, event.threadID, event.messageID);
+      }
 
-				try {
-					const imgResponse = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-					const imgPath = path.join(__dirname, 'cache', `${i + 1}.jpg`);
-					await fs.outputFile(imgPath, imgResponse.data);
-					imgData.push(fs.createReadStream(imgPath));
-				} catch (error) {
-					console.error(error);
-					// Handle image fetching errors (skip the problematic image)
-				}
-			}
+    
+      const imgData = [];
+      for (let i = 0; i < Math.min(numberOfImages, imageData.length); i++) {
+        const imageUrl = imageData[i];
+        try {
+          const imgResponse = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+          const imgPath = path.join(__dirname, 'cache', `${i + 1}.jpg`);
+          await fs.outputFile(imgPath, imgResponse.data);
+          imgData.push(fs.createReadStream(imgPath));
+        } catch (error) {
+          console.error(error);
+        }
+      }
 
-			await api.sendMessage({
-				attachment: imgData,
-				body: `Here are the top ${imgData.length} image results for "${keySearchs}":`
-			}, event.threadID, event.messageID);
-
-			await fs.remove(path.join(__dirname, 'cache'));
-		} catch (error) {
-			console.error(error);
-			return api.sendMessage(`An error occurred. Please try again later.`, event.threadID, event.messageID);
-		}
-	}
+     
+      await api.sendMessage({
+        attachment: imgData,
+        body: ``
+      }, event.threadID, event.messageID);
+    } catch (error) {
+      console.error(error);
+      return api.sendMessage(`An error occurred.`, event.threadID, event.messageID);
+    }
+  }
 };
