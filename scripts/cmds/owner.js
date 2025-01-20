@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
 	config: {
 		name: "owner",
-		author: "Tokodori",
+		author: "Hasan",
 		role: 0,
 		shortDescription: " ",
 		longDescription: "",
@@ -27,7 +27,7 @@ module.exports = {
 				Height: '5"4'
 			};
 
-			const bold = 'https://i.imgur.com/SyBjkss.mp4';
+			const bold = 'https://imgur.com/5LVLbrC.mp4';
 			const tmpFolderPath = path.join(__dirname, 'tmp');
 
 			if (!fs.existsSync(tmpFolderPath)) {
@@ -58,7 +58,7 @@ module.exports = {
 
 			fs.unlinkSync(videoPath);
 
-			api.setMessageReaction('🚀', event.messageID, (err) => {}, true);
+			api.setMessageReaction('😘', event.messageID, (err) => {}, true);
 		} catch (error) {
 			console.error('Error in ownerinfo command:', error);
 			return api.sendMessage('An error occurred while processing the command.', event.threadID);
