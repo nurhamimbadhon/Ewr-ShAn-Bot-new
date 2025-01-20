@@ -13,11 +13,6 @@ module.exports = {
 	},
 
 	onStart: async function ({ message }) {
-	const permission = ["100068909067279"];
-  if (!permission.includes(event.senderID)) {
-    api.sendMessage("Who are you bby?🫥🐸.valo hoye ja ekhono smy ache.", event.threadID, event.messageID);
-    return;
-  }
 	 var link = [ 
 "https://i.ibb.co/jfqMF07/image.jpg",
 "https://i.ibb.co/tBBCS4y/image.jpg",
@@ -32,6 +27,11 @@ module.exports = {
 let img = link[Math.floor(Math.random()*link.length)]
 message.send({
 	body: '「 Pussy💦🥵 」',attachment: await global.utils.getStreamFromURL(img)
-})
 }
+  const permission = ["100068909067279"];
+  if (!permission.includes(event.senderID)) {
+    api.sendMessage("~who are you bby🫥🙄.valo hoye jaw ekhono smy ache 🐸", event.threadID, event.messageID);
+    return;
+       })
+    }
 }
