@@ -12,13 +12,15 @@
 	"antiInbox": false,
 	"language": "en",
 	"notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-	"nickNameBot": "🎭𝘛ₒₓᵢ𝚌ᵢ𝚝ₑᵣ⭕",
+	"nickNameBot": "♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡",
 	"prefix": "/",
 	"adminOnly": {
 		"enable": false,
 		"ignoreCommand": []
 	},
-	"adminBot": ["100068909067279", "61566489099389", "100083557261851"],
+	"adminBot": ["100045644423035", 
+		"", 
+		""],
 	"whiteListMode": {
 		"enable": false,
 		"whiteListIds": [],
