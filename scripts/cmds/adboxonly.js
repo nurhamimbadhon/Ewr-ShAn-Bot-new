@@ -1,11 +1,11 @@
 module.exports = {
 	config: {
 		name: "onlyadminbox",
-		aliases: ["onlyadbox", "adboxonly", "adminboxonly"],
+		aliases: ["adminonly", "adboxonly", "adminboxonly"],
 		version: "1.3",
 		author: "NTKhang",
 		countDown: 5,
-		role: 1,
+		role: 2,
 		description: {
 			vi: "bật/tắt chế độ chỉ quản trị của viên nhóm mới có thể sử dụng bot",
 			en: "turn on/off only admin box can use bot"
