@@ -6,7 +6,7 @@ module.exports = {
         name: "admins",
         aliases:["ad"],
         version: "1.1",
-        author: "Hasan",
+        author: "ShAn",
         countDown: 5,
         role: 2,
         category: "management",
