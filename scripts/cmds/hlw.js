@@ -85,7 +85,7 @@ const talkWithBot = async (api, threadID, messageID, senderID, input) => {
 
 module.exports.config = {
   name: "bbu",
-  aliases: ["bbz", "hey"],
+  aliases: ["Shan", "shan", "bbz", "bby"],
   version: "1.6.9",
   author: "Nazrul",
   role: 0,
