@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
 	config: {
 		name: "owner",
-		author: "Hasan",
+		author: "ShAn",
 		role: 0,
 		shortDescription: " ",
 		longDescription: "",
@@ -17,14 +17,14 @@ module.exports = {
 	onStart: async function ({ api, event }) {
 		try {
 			const ownerInfo = {
-				name: '𝙄𝙩𝙯 𝙃𝘼𝙎𝘼𝙉',
+				name: 'Ewr ShAn',
 				gender: '𝗠𝗮𝗹𝗲',
-				Birthday: '𝟐𝟐-𝟎𝟕-𝟐𝟎𝟎𝟖',
+				Birthday: '10-𝟎𝟕-𝟐𝟎𝟎5',
 				religion: '𝙄𝙨𝙡𝙖𝙢',
 				hobby: '𝙎𝙡𝙚𝙚𝙥𝙞𝙣𝙜',
-				Fb: 'https://www.facebook.com/Itz.HaSaN.00',
+				Fb: 'https://www.facebook.com/sirana252',
 				Relationship: '𝙎𝙞𝙣𝙜𝙡𝙚',
-				Height: '5"4'
+				Height: '5"3'
 			};
 
 			const bold = 'https://imgur.com/PA1SJH9.mp4';
@@ -58,7 +58,7 @@ module.exports = {
 
 			fs.unlinkSync(videoPath);
 
-			api.setMessageReaction('😘', event.messageID, (err) => {}, true);
+			api.setMessageReaction('😍', event.messageID, (err) => {}, true);
 		} catch (error) {
 			console.error('Error in ownerinfo command:', error);
 			return api.sendMessage('An error occurred while processing the command.', event.threadID);
