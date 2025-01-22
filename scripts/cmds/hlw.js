@@ -115,7 +115,7 @@ module.exports.onStart = async ({ api, event, args }) => {
 module.exports.onChat = async ({ api, event }) => {
   const { threadID, messageID, body, senderID } = event;
 
-  const cMessages = ["কি হয়ছে বেবি দাকস কেন 🍆🙂", "হুম বল🐸", "Ami ekhane bby 🥹🥹", "Amake vhule jaw 🤌😫", "Ei ne amar rubbish boss er id:https://www.facebook.com/Itz.HaSaN.00 amare disturb korbi nah jaa", "ki hoiche ki koibi ?🐐", "kire bukachuda dakhtechos killai etw🐐👈", "Ami shudhu hasan er bbu🤌😫"];
+  const cMessages = ["কি হয়ছে বেবি দাকস কেন 😑😪", "হুম বল🐸", "Ami shudhu ShAn er bbu🤌😫", "Ami ekhane bby 🥹🥹", "Amake vhule jaw 🤌😫", "Ei ne amar rubbish boss er id:https://www.facebook.com/sirana252 amare disturb korbi nah jaa", "ki hoiche ki koibi ?🐐", "kire bukachuda dakhtechos killai etw🐐👈", "Ami shudhu ShAn er bbu🤌😫"];
   const userInput = body.toLowerCase().trim();
 
   const keywords = ["bbu", "hey", "bbz", "বট", "robot"];
