@@ -43,7 +43,7 @@ async function fetchAudioFromQuery(query) {
 }
 
 async function handleAudioCommand(api, event, args, message) {
-    api.setMessageReaction("⏳", event.messageID, () => {}, true);
+    api.setMessageReaction("🕢", event.messageID, () => {}, true);
 
     try {
         let videoId;
