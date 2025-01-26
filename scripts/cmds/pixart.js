@@ -24,7 +24,7 @@ module.exports.handleEvent = async function ({ api, event }) {
     return;
   }
 
-  api.sendMessage("🕟 | 𝙿𝚒𝚡𝙰𝚛𝚝 𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙿𝚛𝚘𝚖𝚙𝚝, 𝙿𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝...", event.threadID);
+  api.sendMessage("⌛ | 𝙿𝚒𝚡𝙰𝚛𝚝 𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙿𝚛𝚘𝚖𝚙𝚝, 𝙿𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝...", event.threadID);
 
   try {
     const response = await axios.get('https://codemerge-api.hazeyy0.repl.co/pixart/api', {
