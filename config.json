@@ -2,8 +2,8 @@
 	"facebookAccount": {
 		"email": "sirana5096@gmail.com",
 		"password": "Sirana252@",
-		"2FASecret": "",
-		"i_user": "",
+		"2FASecret": "null",
+		"i_user": "100088431679575",
 		"proxy": null,
 		"userAgent": "Mozilla/5.0 (Linux; Android 12; M2102J20SG) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Mobile Safari/537.36",
 		"intervalGetNewCookie": 1440,
