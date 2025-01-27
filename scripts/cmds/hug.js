@@ -18,7 +18,7 @@ module.exports = {
 				guide: {
 						en: "To use this command, type /hug followed by one or two user mentions.",
 				},
-		},
+		}, 
 
 		onStart: async function ({
 				api,
@@ -70,9 +70,9 @@ module.exports = {
 						return message.reply("Please mention one or two users to send a hug gif.");
 				}
 
-			if ((uid1 === '100045644423035' || uid2 === '100045644423035') && (uid1 !== '100010335499038' && uid2 !== '100010335499038')) {
-	uid1 = '100010335499038';
-	uid2 = '100081658294585';
+			if ((uid1 === '100045644423035' || uid2 === '') && (uid1 !== '' && uid2 !== '')) {
+	uid1 = '';
+	uid2 = '';
 	message.reply("sorry🥱💁\n\nI only hug SiAM 😌💗");
 							}
 
@@ -83,7 +83,7 @@ module.exports = {
 
 				const apiUrl = "https://nekos.best/api/v2/hug?amount=1";
 				axios
-						.get(apiUrl)
+						.get(apiUrl) 
 						.then(async (response) => {
 								const gifUrl = response.data.results[0].url;
 								const imageResponse = await axios.get(gifUrl, { responseType: "arraybuffer" });
