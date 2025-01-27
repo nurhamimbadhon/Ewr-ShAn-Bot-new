@@ -7,7 +7,7 @@ module.exports = {
 		name: "whitelistthread",
 		aliases: ["wlt", "wt"],
 		version: "1.5",
-		author: "NTKhang",
+		author: "ShAn",
 		countDown: 5,
 		role: 2,
 		description: {
