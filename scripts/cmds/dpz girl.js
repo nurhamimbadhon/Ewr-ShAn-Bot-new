@@ -1,11 +1,11 @@
 module.exports = {
 	config: {
-		name: "dpz g",
-		aliases: ["dpz",],
+		name: "dpz girl",
+		aliases: ["dpz g",],
 		version: "1.0",
 		author: "AceGun",
 		countDown: 5,
-		role: 2,
+		role: 0,
 		shortDescription: "send you a girl photos",
 		longDescription: "",
 		category: "Image",
