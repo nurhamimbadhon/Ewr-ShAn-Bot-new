@@ -1,7 +1,7 @@
 module.exports = {
 	config: {
 		name: "dpz girl",
-		aliases: ["dpz g",],
+		aliases: ["dpz-g",],
 		version: "1.0",
 		author: "AceGun",
 		countDown: 5,
