@@ -14,7 +14,7 @@ module.exports = {
 
 	onStart: async function ({ message }) {
 	 var link = [
-"https://i.postimg.cc/Xv83VgVt/FB-IMG-1738039817218.jpg
+"https://i.postimg.cc/Xv83VgVt/FB-IMG-1738039817218.jpg" ,
 "https://i.postimg.cc/pdxRbStD/FB-IMG-1738040113356.jpg" ,
 "https://i.postimg.cc/tT4b7VJJ/FB-IMG-1738040165658.jpg" ,
 "https://i.postimg.cc/T3nfs6Bd/FB-IMG-1738080670784.jpg" ,
