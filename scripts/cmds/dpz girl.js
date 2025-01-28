@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "dpz girl",
+		name: "dpz-g",
 		aliases: ["dpz-g",],
 		version: "1.0",
 		author: "AceGun",
@@ -8,7 +8,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "send you a girl photos",
 		longDescription: "",
-		category: "Image",
+		category: "IMAGE",
 		guide: "{pn}"
 	},
 
