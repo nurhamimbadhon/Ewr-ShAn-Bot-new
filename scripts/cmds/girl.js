@@ -1,7 +1,7 @@
 module.exports = {
 	config: {
-		name: "girl",
-		aliases: ["girl", "pic"],
+		name: "pic",
+		aliases: ["pic"],
 		version: "1.0",
 		author: "AceGun",
 		countDown: 5,
@@ -390,7 +390,7 @@ module.exports = {
 
 let img = link[Math.floor(Math.random()*link.length)]
 message.send({
-	body: '「 Here is your Babe😻 」',attachment: await global.utils.getStreamFromURL(img)
+	body: '「 Here is your Babe😻🥵 」',attachment: await global.utils.getStreamFromURL(img)
 })
 }
 		 }
