@@ -17,13 +17,13 @@ module.exports = {
 	onStart: async function ({ api, event }) {
 		try {
 			const ownerInfo = {
-				name: '𝑬𝒘𝑹 𝑺𝒉𝑨𝒏,
-				gender: '𝑴𝒂𝑳𝒆,
+				name: '𝑬𝒘𝑹 𝑺𝒉𝑨𝒏',
+				gender: '𝑴𝒂𝑳𝒆',
 				Birthday: '10-𝟎𝟕-𝟐𝟎𝟎5',
-				religion: '𝙄𝒔𝒍𝑨𝒎,
-				hobby: '𝑺𝒍𝒆𝒆𝑷𝒊𝒏𝑮,
+				religion: '𝙄𝒔𝒍𝑨𝒎',
+				hobby: '𝑺𝒍𝒆𝒆𝑷𝒊𝒏𝑮',
 				Fb: 'https://www.facebook.com/sirana252',
-				Relationship: '𝑺𝒊𝒏𝑮𝒆𝒍,
+				Relationship: '𝑺𝒊𝒏𝑮𝒆𝒍',
 				Height: '5"3'
 			};
 
