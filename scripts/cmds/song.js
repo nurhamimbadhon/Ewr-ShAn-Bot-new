@@ -26,10 +26,10 @@ module.exports = {
 				+ "\n {pn} Despacito"
 		}
 	},
-	onStart: async ({ api, args, event }) => {
-		if (args.length === 0) {
+	onStart: async function ({ api, event, args, message }) {
+    api.setMessageReaction("✨", event.messageID, (err) => {if (args.length === 0) {
 			return api.sendMessage("❌ Please provide a song name.", event.threadID, event.messageID);
-		}
+		}, true);
 
 		const keyWord = args.join(" ");
 		const maxResults = 1;
