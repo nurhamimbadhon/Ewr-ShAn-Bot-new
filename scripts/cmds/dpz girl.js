@@ -13,6 +13,7 @@ module.exports = {
 	},
 
 	onStart: async function ({ message }) {
+	api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
 	 var link = [
 "https://i.postimg.cc/Xv83VgVt/FB-IMG-1738039817218.jpg",
 "https://i.postimg.cc/pdxRbStD/FB-IMG-1738040113356.jpg",
