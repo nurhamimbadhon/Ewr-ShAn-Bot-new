@@ -12,7 +12,7 @@ module.exports = {
 		guide: "{pn}"
 	},
 
-	onStart: async function ({ api, message }) {
+	onStart: async function ({ api, event, message }) {
 	api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
 	 var link = [
 "https://i.postimg.cc/Xv83VgVt/FB-IMG-1738039817218.jpg",
