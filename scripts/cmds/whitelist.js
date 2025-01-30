@@ -2,6 +2,7 @@ const { config } = global.GoatBot;
 module.exports = {
 	config: {
 		name: "whitelist",
+		aliases: ["wl", "whitelist"],
 		version: "1.0",
 		author: "rehat--",
 		countDown: 5,
