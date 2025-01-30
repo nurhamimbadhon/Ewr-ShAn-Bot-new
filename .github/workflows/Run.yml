@@ -1,4 +1,4 @@
-name: ewrshan
+name: Node.js CI
 
 on:
   push:
