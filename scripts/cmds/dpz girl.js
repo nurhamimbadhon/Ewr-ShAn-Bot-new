@@ -66,7 +66,7 @@ module.exports = {
 "https://i.postimg.cc/Sxh22GMD/received-996078799085618.jpg",
 "https://i.postimg.cc/8kxrDGP8/received-999316578733686.jpg",
 ]
-
+api.setMessageReaction("✅", event.messageID, (err) => {}, true);
 let img = link[Math.floor(Math.random()*link.length)]
 message.send({
 	body: '「 EI NAW TMR DPZ😎  」',attachment: await global.utils.getStreamFromURL(img)
