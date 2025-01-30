@@ -12,7 +12,8 @@ module.exports = {
 		guide: "{pn}"
 	},
 
-	onStart: async function ({ message }) {
+	onStart: async function ({ api, event, message }) {
+	api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
 	 var link = [
 "https://i.postimg.cc/4yvhpb06/received-1000035335289031.jpg",
 "https://i.postimg.cc/yYPZdjcB/received-1076227457871166.jpg",
@@ -50,6 +51,7 @@ module.exports = {
 ]
 
 let img = link[Math.floor(Math.random()*link.length)]
+api.setMessageReaction("✅", event.messageID, (err) => {}, true);
 message.send({
 	body: '「 EI NAW TMR DPZ😎  」',attachment: await global.utils.getStreamFromURL(img)
 })
