@@ -1,7 +1,7 @@
 module.exports = {
 	config: {
-		name: "dpz-c",
-		aliases: ["dpz-c",],
+		name: "dpc",
+		aliases: ["dpc",],
 		version: "1.0",
 		author: "ShAn",
 		countDown: 5,
