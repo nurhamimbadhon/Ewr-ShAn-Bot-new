@@ -7,19 +7,19 @@ const { commands, aliases } = global.GoatBot;
 module.exports = {
   config: {
     name: "help",
-    version: "1.18",
-    author: "ShAn", 
+    version: "1.17",
+    author: "ShAn", // original author Kshitiz
     countDown: 5,
     role: 0,
     shortDescription: {
       en: "View command usage",
     },
     longDescription: {
-      en: "View command usage and list all commands or commands by category",
+      en: "View command usage and list all commands directly",
     },
     category: "info",
     guide: {
-      en: "{pn} / help cmdName\n{pn} -c <categoryName>",
+      en: "{pn} / help cmdName",
     },
     priority: 1,
   },
@@ -59,38 +59,15 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
       msg += `\n𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `\n🫧𝘽𝙊𝙏 𝙉𝘼𝙈𝙀🫧: ♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡`;
+      msg += `\n🫧𝘽𝙊𝙏 𝙉𝘼𝙈𝙀🫧:♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡`;
       msg += `\n🔹 𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍 🔹`;
       msg += `\n 	 					`;
-      msg += `\n~𝙉𝘼𝙈𝙀:✰ 𝑬𝒘'𝒓 𝑺𝒉𝑨𝒏'𝒔 ✰`;
+      msg += `\n~𝙉𝘼𝙈𝙀:✰ 𝑬𝒘𝑹 𝑺𝒉𝑨𝒏 ✰`;
       msg += `\n~𝙁𝘽:https://www.facebook.com/sirana252`;
 
       await message.reply({
         body: msg,
       });
-    } else if (args[0] === "-c") {
-      if (!args[1]) {
-        await message.reply("Please specify a category name.");
-        return;
-      }
-
-      const categoryName = args[1].toLowerCase();
-      const filteredCommands = Array.from(commands.values()).filter(
-        (cmd) => cmd.config.category?.toLowerCase() === categoryName
-      );
-
-      if (filteredCommands.length === 0) {
-        await message.reply(`No commands found in the category "${categoryName}".`);
-        return;
-      }
-
-      let msg = `╔══════════════╗\n🔹 ${categoryName.toUpperCase()} COMMANDS 🔹\n╚══════════════╝\n`;
-
-      filteredCommands.forEach((cmd) => {
-        msg += `\n💠 ${cmd.config.name} 💠`;
-      });
-
-      await message.reply(msg);
     } else {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
@@ -142,4 +119,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-    }
+       }
