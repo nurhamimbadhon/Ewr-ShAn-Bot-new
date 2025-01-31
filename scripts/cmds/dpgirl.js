@@ -1,7 +1,7 @@
 module.exports = {
 	config: {
-		name: "dpz-g",
-		aliases: ["dpz-g",],
+		name: "dpg",
+		aliases: ["dpg",],
 		version: "1.0",
 		author: "ShAn",
 		countDown: 5,
@@ -65,7 +65,33 @@ module.exports = {
 "https://i.postimg.cc/7LBfR8QW/received-917937196992797.jpg",
 "https://i.postimg.cc/Sxh22GMD/received-996078799085618.jpg",
 "https://i.postimg.cc/8kxrDGP8/received-999316578733686.jpg",
-]
+"https://i.postimg.cc/C5tZZqfY/received-1155708439397399.jpg",
+"https://i.postimg.cc/SN22BDwK/received-1342140586978624.jpg",
+"https://i.postimg.cc/4Nqtyrzt/received-1343019533513903.jpg",
+"https://i.postimg.cc/zfmnt9v5/received-1391807405513812.jpg",
+"https://i.postimg.cc/qvKK3jLF/received-1398411978203236.jpg",
+"https://i.postimg.cc/8csJPHct/received-1512796676083440.jpg",
+"https://i.postimg.cc/rFPGWdLD/received-1542543566404548.jpg",
+"https://i.postimg.cc/rmM5cx5P/received-1604362920259562.jpg",
+"https://i.postimg.cc/63cnQq05/received-1641057533464062.jpg",
+"https://i.postimg.cc/sDv7VVZs/received-1792475834627181.jpg",
+"https://i.postimg.cc/wxWD8tMw/received-1808830859914143.jpg",
+"https://i.postimg.cc/V68W63P4/received-1877291599345183.jpg",
+"https://i.postimg.cc/yN9T77tk/received-2644374319089169.jpg",
+"https://i.postimg.cc/wTCygDpQ/received-3524506347684207.jpg",
+"https://i.postimg.cc/xdKLWtNm/received-3917650718482626.gif",
+"https://i.postimg.cc/wMbNhrZC/received-469448392889007.jpg",
+"https://i.postimg.cc/sx2SGz6P/received-484378984449241.jpg",
+"https://i.postimg.cc/gcBLtft5/received-557623980610689.gif",
+"https://i.postimg.cc/j5Mnb9xD/received-627508086421902.gif",
+"https://i.postimg.cc/HW39YZZ4/received-655645056793723.jpg",
+"https://i.postimg.cc/KYyMrBp8/received-901130575427090.gif",
+"https://i.postimg.cc/tTNtV2Xb/received-909089161432249.jpg",
+"https://i.postimg.cc/pr0fsrh1/received-9653762761324813.jpg",
+"https://i.postimg.cc/cLtRcssX/received-967047568225505.jpg",
+"https://i.postimg.cc/T12jjgwD/received-967267185355948.jpg",
+
+	 ]
 let img = link[Math.floor(Math.random()*link.length)]
 api.setMessageReaction("✅", event.messageID, (err) => {}, true);
 message.send({
