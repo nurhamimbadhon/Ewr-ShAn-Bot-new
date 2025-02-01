@@ -26,7 +26,7 @@ module.exports.onStart = async ({ api, event, args, usersData }) => {
 
   try {
     if (!args[0]) {
-      const ran = ["Bolo baby", "hum", "type help baby", "type !baby hi"];
+      const ran = ["Bolo baby", "hum", "type help baby", "type baby hi"];
       return api.sendMessage(ran[Math.floor(Math.random() * ran.length)], event.threadID, event.messageID);
     }
 
@@ -145,7 +145,7 @@ module.exports.onChat = async ({ api, event,message }) => {
     const body = event.body ? event.body.toLowerCase() : ""
     if(body.startsWith("baby") || body.startsWith("bby") || body.startsWith("bot") || body.startsWith("hii")){
       const arr = body.replace(/^\S+\s*/, "")
-      if(!arr){ api.sendMessage("🔹Hea bby bolo 🙋‍♂️\nEto daka dakir ki ache 😒😾","🔹Ei Tho Ami😘\nBolo Ki Hoice🤗","🔹Hea Bby Bolo🤧", event.threadID, (error, info) => {
+      if(!arr){ api.sendMessage("🔹Ei Tho Ami😘\nBolo Ki Hoice🤗", event.threadID, (error, info) => {
       global.GoatBot.onReply.set(info.messageID, {
         commandName: this.config.name,
         type: "reply",
