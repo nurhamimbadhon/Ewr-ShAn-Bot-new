@@ -14,11 +14,11 @@ module.exports = {
     guide: "{pn}"
   },
   onStart: async function ({ api, event, args, usersData, threadsData }) {
+    api.setMessageReaction("💝", event.messageID, (err) => {}, true);
     let pathImg = __dirname + "/cache/background.png";
     let pathAvt1 = __dirname + "/cache/Avtmot.png";
     let pathAvt2 = __dirname + "/cache/Avthai.png";
 
-    api.setMessageReaction("💝", event.messageID, (err) => {}, true);
     var id1 = event.senderID;
     var name1 = ""; // Replace with function that retrieves the name of the user
     var ThreadInfo = await api.getThreadInfo(event.threadID);
