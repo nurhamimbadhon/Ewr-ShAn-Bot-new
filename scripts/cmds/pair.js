@@ -6,7 +6,7 @@ const fs = require("fs-extra");
 module.exports = {
   config: {
     name: "pair",
-    aurthor:"xemon",
+    aurthor:"ShAn",
      role: 0,
     shortDescription: " ",
     longDescription: "",
@@ -18,6 +18,7 @@ module.exports = {
     let pathAvt1 = __dirname + "/cache/Avtmot.png";
     let pathAvt2 = __dirname + "/cache/Avthai.png";
 
+    api.setMessageReaction("💝", event.messageID, (err) => {}, true);
     var id1 = event.senderID;
     var name1 = ""; // Replace with function that retrieves the name of the user
     var ThreadInfo = await api.getThreadInfo(event.threadID);
