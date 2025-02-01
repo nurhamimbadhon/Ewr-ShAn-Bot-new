@@ -8,7 +8,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "ShAn", // original author Kshitiz
+    author: "NTKhang", // original author Kshitiz
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -62,7 +62,7 @@ module.exports = {
       msg += `\n🫧𝘽𝙊𝙏 𝙉𝘼𝙈𝙀🫧:♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡`;
       msg += `\n🔹 𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍 🔹`;
       msg += `\n 	 					`;
-      msg += `\n~𝙉𝘼𝙈𝙀:✰ 𝑬𝒘𝑹 𝑺𝒉𝑨𝒏 ✰`;
+      msg += `\n~𝙉𝘼𝙈𝙀:✰ 𝐄𝐖𝐑 𝐒𝐇𝐀𝐍 ✰`;
       msg += `\n~𝙁𝘽:https://www.facebook.com/sirana252`;
 
       await message.reply({
@@ -98,7 +98,7 @@ module.exports = {
           `├── Usage\n` +
           `│ ${usage}\n` +
           `├── Notes\n` +
-          `│ The content inside <ShAn> can be changed\n` +
+          `│ The content inside <SHAN> can be changed\n` +
           `│ The content inside [a|b|c] is a or b or c\n` +
           `╰━━━━━━━❖`;
 
