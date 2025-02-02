@@ -5,12 +5,12 @@ module.exports = {
 		name: "activemember",
 		aliases: ["am"],
 		version: "1.0",
-		author: "kshitiz",
+		author: "ShAn",
 		countDown: 5,
 		role: 0,
 		shortDescription: "Get the top 15 users by message count in the current chat",
 		longDescription: "Get the top 15 users by message count in the current chat",
-		category: "𝗙𝗨𝗡",
+		category: "𝗕𝗢𝗫 𝗖𝗛𝗔𝗧",
 		guide: "{p}{n}",
 	},
 	onStart: async function ({ api, event }) {
@@ -43,7 +43,7 @@ module.exports = {
 
 			const topUsers = Object.entries(messageCounts)
 				.sort((a, b) => b[1] - a[1])
-				.slice(0, 15);
+				.slice(0, 30);
 
 
 			const userList = [];
