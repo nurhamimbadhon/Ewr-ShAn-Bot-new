@@ -43,7 +43,7 @@ module.exports = {
 
 			const topUsers = Object.entries(messageCounts)
 				.sort((a, b) => b[1] - a[1])
-				.slice(0, 30);
+				.slice(0, 50);
 
 
 			const userList = [];
