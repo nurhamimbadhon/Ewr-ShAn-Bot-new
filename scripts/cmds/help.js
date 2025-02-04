@@ -8,7 +8,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "NTKhang", // original author Kshitiz
+    author: "𝗦𝗵𝗔𝗻", // original author Kshitiz
     countDown: 5,
     role: 0,
     shortDescription: {
