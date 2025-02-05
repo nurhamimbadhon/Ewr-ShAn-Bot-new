@@ -1,8 +1,7 @@
 module.exports.config = {
   name: "spamkick",
-  aliases:["spk"],
   version: "1.0.0",
-  role: 1, 
+  role: 0, 
   author: "Dipto",
   usePrefix: true,
   description: { 
@@ -23,8 +22,8 @@ module.exports.onChat = async ({ api, event, usersData, commandName }) => {
     threadInfo.users[senderID].count++;
     const timePassed = Date.now() - threadInfo.users[senderID].time;
     const messages = threadInfo.users[senderID].count;
-    const timeLimit = 50000;
-    const messageLimit = 8; //Limit of message
+    const timeLimit = 80000;
+    const messageLimit = 14; //Limit of message
 
     if (messages > messageLimit && timePassed < timeLimit) {
       if(global.GoatBot.config.adminBot.includes(senderID)) return;
