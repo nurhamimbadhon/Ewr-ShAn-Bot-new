@@ -23,7 +23,7 @@ module.exports.onChat = async ({ api, event, usersData, commandName }) => {
     threadInfo.users[senderID].count++;
     const timePassed = Date.now() - threadInfo.users[senderID].time;
     const messages = threadInfo.users[senderID].count;
-    const timeLimit = 80000;
+    const timeLimit = 50000;
     const messageLimit = 8; //Limit of message
 
     if (messages > messageLimit && timePassed < timeLimit) {
