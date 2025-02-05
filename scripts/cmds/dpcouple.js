@@ -8,7 +8,7 @@ module.exports = {
 		role: 0,
 		shortDescription: "send you a girl photos",
 		longDescription: "",
-		category: "image",
+		category: "𝗜𝗠𝗔𝗚𝗘",
 		guide: "{pn}"
 	},
 
