@@ -2,7 +2,7 @@ module.exports.config = {
   name: "spamkick",
   version: "1.0.0",
   role: 0, 
-  author: "Dipto",
+  author: "ShAn",
   usePrefix: true,
   description: { 
       en: "Automatically kick a user who spams messages in a group chat"
@@ -23,7 +23,7 @@ module.exports.onChat = async ({ api, event, usersData, commandName }) => {
     const timePassed = Date.now() - threadInfo.users[senderID].time;
     const messages = threadInfo.users[senderID].count;
     const timeLimit = 80000;
-    const messageLimit = 14; //Limit of message
+    const messageLimit = 5; //Limit of message
 
     if (messages > messageLimit && timePassed < timeLimit) {
       if(global.GoatBot.config.adminBot.includes(senderID)) return;
