@@ -6,7 +6,7 @@ module.exports = {
 		author: "ShAn",
 		countDown: 5,
 		role: 0,
-		shortDescription: "send you a girl photos",
+		shortDescription: "send you a boy photos",
 		longDescription: "",
 		category: "𝗜𝗠𝗔𝗚𝗘",
 		guide: "{pn}"
