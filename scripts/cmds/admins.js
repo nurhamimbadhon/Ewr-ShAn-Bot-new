@@ -7,7 +7,7 @@ module.exports = {
         author: "ShAn",
         countDown: 5,
         role: 0,
-        category: "management",
+        category: "𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡",
         guide: {
             en: "{pn} [list | -l]: Display the list of all bot admins"
         }
