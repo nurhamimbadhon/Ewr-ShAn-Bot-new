@@ -14,9 +14,9 @@ module.exports = {
 	config: {
 		name: 'ai2',
 		version: '2.5',
-		author: 'jay',
+		author: '𝗦𝗵𝗔𝗻',
 		role: 0,
-		category: 'ai',
+		category: '𝗔𝗜-𝗖𝗛𝗔𝗧',
 		shortDescription: {
 			en: 'Asks an AI for an answer.',
 		},
