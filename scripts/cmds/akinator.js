@@ -5,7 +5,7 @@ module.exports = {
     name: "akinator",
     aliases: ["aki"],
     version: "1.0",
-    author: "EDINST",
+    author: "𝗦𝗵𝗔𝗻",
     countDown: 10,
     role: 0,
     shortDescription: {
@@ -14,7 +14,7 @@ module.exports = {
     longDescription: {
       en: "Akinator bot that guesses the character you're thinking of."
     },
-    category: "games",
+    category: "𝗚𝗔𝗠𝗘𝗦",
     guide: {
       en: "Use {pn} to start a game with Akinator."
     }
