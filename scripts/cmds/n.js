@@ -15,19 +15,19 @@ module.exports = {
 
 	onStart: async function ({ api, event, message }) {
 	 var link = [
-"https://i.postimg.cc/d3YLLXKb/04.jpg
-"https://i.postimg.cc/kXZPsS24/12485362-new-mix-4-01-selfie-nude-teen-topless-tits-dressingroom.jpg
-"https://i.postimg.cc/pdKvpdXd/353780014-met-art-af-388-0000.jpg
-"https://i.postimg.cc/bJ8hbjs9/7f350a87573beb26093e50ab8ad355cd.jpg
-"https://i.postimg.cc/ZKzrd7cK/8624898-ai-art-models-17186-2015027308-nsfw-realistic-drawing-of-cute-g.jpg
-"https://i.postimg.cc/8k41RsdJ/988535-too-cute-nude.jpg
-"https://i.postimg.cc/x1hjX7v6/a0b23e239e4b6f3b181e7066a77f88c6.jpg
-"https://i.postimg.cc/3JWH21JV/bcdc306c7b61a3c0fc9a49707468d14e.jpg
-"https://i.postimg.cc/8zKJtthv/c4e6401b115c94545b32e4f688851ccc.jpg
-"https://i.postimg.cc/SKL0mtD2/Deepika-Nude-Model-The-Fappening-Pro-20.jpg
-"https://i.postimg.cc/7hHqvy4Z/Gracie-Hunt-nude-tits-hot-leaked-porn-Scandal-Planet-8.jpg
-"https://i.postimg.cc/8zJNgH2M/heyall-a-student-nude-photographs-024.jpg
-"https://i.postimg.cc/sghdN2WJ/Model-Dulce-Nude-The-Fappening-Pro-15-1048x1536.jpg
+"https://i.postimg.cc/d3YLLXKb/04.jpg",
+"https://i.postimg.cc/kXZPsS24/12485362-new-mix-4-01-selfie-nude-teen-topless-tits-dressingroom.jpg",
+"https://i.postimg.cc/pdKvpdXd/353780014-met-art-af-388-0000.jpg",
+"https://i.postimg.cc/bJ8hbjs9/7f350a87573beb26093e50ab8ad355cd.jpg",
+"https://i.postimg.cc/ZKzrd7cK/8624898-ai-art-models-17186-2015027308-nsfw-realistic-drawing-of-cute-g.jpg",
+"https://i.postimg.cc/8k41RsdJ/988535-too-cute-nude.jpg",
+"https://i.postimg.cc/x1hjX7v6/a0b23e239e4b6f3b181e7066a77f88c6.jpg",
+"https://i.postimg.cc/3JWH21JV/bcdc306c7b61a3c0fc9a49707468d14e.jpg",
+"https://i.postimg.cc/8zKJtthv/c4e6401b115c94545b32e4f688851ccc.jpg",
+"https://i.postimg.cc/SKL0mtD2/Deepika-Nude-Model-The-Fappening-Pro-20.jpg",
+"https://i.postimg.cc/7hHqvy4Z/Gracie-Hunt-nude-tits-hot-leaked-porn-Scandal-Planet-8.jpg",
+"https://i.postimg.cc/8zJNgH2M/heyall-a-student-nude-photographs-024.jpg",
+"https://i.postimg.cc/sghdN2WJ/Model-Dulce-Nude-The-Fappening-Pro-15-1048x1536.jpg",
 "https://i.postimg.cc/8CgQQVBg/OIP.jpg",
 "https://i.postimg.cc/7YBZkbf8/OIP-1.jpg",
 "https://i.postimg.cc/dt9TTq34/OIP-10.jpg",
