@@ -5,12 +5,12 @@ module.exports = {
 	config: {
 		name: "affect",
 		version: "1.1",
-		author: "NIB",
+		author: "𝗦𝗵𝗔𝗻",
 		countDown: 5,
 		role: 0,
 		shortDescription: "Affect image",
 		longDescription: "Affect image",
-		category: "image",
+		category: "𝗜𝗠𝗔𝗚𝗘",
 		guide: {
 			vi: "{pn} [@tag | để trống]",
 			en: "{pn} [@tag]"
