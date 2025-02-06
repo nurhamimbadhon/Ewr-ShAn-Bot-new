@@ -5,12 +5,12 @@ module.exports = {
   config: {
     name: "ads",
     version: "1.0",
-    author: "Samir B. Thakuri",
+    author: "𝗦𝗵𝗔𝗻",
     countDown: 1,
     role: 0,
-    shortDescription: "Advertisement!",
+    shortDescription: "𝗔𝗱𝘃𝗲𝗿𝘁𝗶𝘀𝗲𝗺𝗲𝗻𝘁!",
     longDescription: "",
-    category: "box chat",
+    category: "𝗙𝗨𝗡𝗡𝗬",
     guide: "{pn} [mention|leave_blank]",
     envConfig: {
       deltaNext: 5
