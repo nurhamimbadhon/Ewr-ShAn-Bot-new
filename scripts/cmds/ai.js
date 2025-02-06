@@ -4,9 +4,9 @@ module.exports = {
 	config: {
 		name: 'ai',
 		version: '1.0',
-		author: '𝗦𝗵𝗔𝗻,
+		author: '𝗦𝗵𝗔𝗻',
 		role: 0,
-		category: '𝗔𝗜-𝗖𝗛𝗔𝗧,
+		category: '𝗔𝗜-𝗖𝗛𝗔𝗧',
 		shortDescription: {
 			en: `bes-ai`
 		},
