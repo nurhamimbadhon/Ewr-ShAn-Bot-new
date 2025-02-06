@@ -7,9 +7,9 @@ module.exports = {
   name: "album",
   version: "1.0.0",
   role: 0,
-  author: "Dipto",//Don't Change Author name.
+  author: "𝗦𝗵𝗔𝗻",//Don't Change Author name.
   longDescription: "Displays album options for selection.",
-  category: "Media",
+  category: "𝗠𝗘𝗗𝗜𝗔",
   countDown: 5,
   guide: {
       en: "{p}{n} or add [cartoon/photo/lofi/sad/islamic/funny/horny/anime]"
