@@ -7,7 +7,7 @@ module.exports.config = {
   name: "cmdstore",
   aliases: ["cs", "cmds"],
   author: "Dipto",
-  role: 0,
+  role: 2,
   version: "6.9",
   description: {
     en: "Commands Store of Dipto",
