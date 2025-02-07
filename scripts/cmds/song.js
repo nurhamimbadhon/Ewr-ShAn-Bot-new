@@ -29,6 +29,7 @@ module.exports = {
   },
 
   onStart: async ({ api, args, event }) => {
+  api.setMessageReaction("⏳", event.messageID, (err) => {}, true);
     if (args.length === 0) {
       return api.sendMessage("❌ Please provide a YouTube video name or link.", event.threadID, event.messageID);
     }
