@@ -5,7 +5,7 @@ module.exports = {
   config: {
     name: "alldl",
     version: "1.6",
-    author: "Samir Œ",
+    author: "𝗦𝗵𝗔𝗻",
     countDown: 5,
     role: 0,
     shortDescription: "download content by link",
