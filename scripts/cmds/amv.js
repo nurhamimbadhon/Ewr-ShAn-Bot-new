@@ -13,13 +13,13 @@ module.exports = {
   config: {
     name: "amv",
     aliases: [], 
-    author: "Vex_Kshitiz",
+    author: "𝗦𝗵𝗔𝗻",
     version: "1.0",
     cooldowns: 5,
     role: 0,
     shortDescription: "",
     longDescription: "Get a random animes amv.",
-    category: "utility",
+    category: "𝗠𝗘𝗗𝗜𝗔",
     guide: "{p}amv",
   },
 
