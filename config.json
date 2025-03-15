@@ -12,22 +12,16 @@
 	"antiInbox": false,
 	"language": "en",
 	"notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-	"nickNameBot": "♡𝕮𝖍𝖔𝖈𝖔𝖑𝖆𝖙𝖊 𝕼𝖚𝖊𝖊𝖓♡",
-	"prefix": "-",
+	"nickNameBot": "❀ėฬ𝔯 𝖋á𝒊ⲍ𐍈❀",
+	"prefix": "(",
 	"adminOnly": {
 		"enable": false,
 		"ignoreCommand": []
 	},
-	"adminBot": [
-		"100045644423035",
-		""
-	],
+	"adminBot": ["100045644423035", "61573492023196"],
 	"whiteListMode": {
 		"enable": false,
-		"whiteListIds": [
-			"100045644423035",
-			""
-		],
+		"whiteListIds": ["100045644423035", "61573492023196", "61569536021532"],
 		"notes": "if you enable this feature, only the ids in the whiteListIds list can use the bot"
 	},
 	"whiteListModeThread": {
@@ -49,7 +43,7 @@
 			"email": "sirana5097@gmail.com",
 			"clientId": "255361029474-23gsoq2mk3917srj7teaot6o3jklkag0.apps.googleusercontent.com",
 			"clientSecret": "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",
-			"refreshToken": "1//04Ymsfa047bIWCgYIARAAGAQSNwF-L9IrYuQmIP4gRqQ6BT6HaNJWTIliOMfho_0Tox2uL0F6YtdU8RztdTLSVqpLruVZC-5NOLw",
+			"refreshToken": "1//04hnUppeIAGRLCgYIARAAGAQSNwF-L9IrTeHuQUXglMSk0pFY-SMsxyvtw3pK1rUryqh8K1g395j1Qe2uPt1D1MDNqaf2x9M7Grk",
 			"apiKey": "AIzaSyAhkr3Ncqu6c_0a_anyO6pdu2ZRG5lVscM"
 		},
 		"gRecaptcha": {
